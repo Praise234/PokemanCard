@@ -1,11 +1,11 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
+import { Platform, SafeAreaView, StyleSheet } from 'react-native';
+import PokemanCard from './components/PokemanCard';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      
-    </View>
+    <SafeAreaView style={styles.container}>
+      <PokemanCard />
+    </SafeAreaView>
   );
 }
 
@@ -13,5 +13,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f5f5f5',
+    paddingTop: Platform.OS === "android" && 35,
   },
 });
